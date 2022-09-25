@@ -59,22 +59,42 @@ void menuChoiceQuit() { exit(EXIT_SUCCESS); }
 
 /* ******************************************** */
 
-void menuChoiceReset() {}
+void menuChoiceReset() { ull::reset(); }
 
 /* ******************************************** */
 
 void menuChoiceInsert() {
-  char test[] = "Hello, World!";
-  ull::insert(89119, test);
+  char name[50];
+  uint32_t nmec;
+  printf("Name: ");
+  fgets(name, sizeof(name), stdin);
+  printf("Nmec: ");
+  scanf(" %d", &nmec);
+  ull::insert(nmec, &name[0]);
 }
 
 /* ******************************************** */
 
-void menuChoiceQuery() {}
+void menuChoiceQuery() {
+  uint32_t nmec;
+  printf("Nmec: ");
+  scanf(" %d", &nmec);
+  const char *name = ull::query(nmec);
+  if (name) {
+    printf("Stundent's name: %s\n", name);
+  } else {
+    printf("No student found");
+  }
+}
 
 /* ******************************************** */
 
-void menuChoiceRemove() {}
+void menuChoiceRemove() {
+  printf("Nmec: ");
+  uint32_t nmec;
+  scanf(" %d", &nmec);
+  ull::remove(nmec);
+}
 
 /* ******************************************** */
 
