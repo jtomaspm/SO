@@ -238,8 +238,6 @@ int main(int argc, char *argv[])
      */
     
     for (uint32_t i = 0; i<nservers;i++) {
-        pthread::
-    
     }
 
 
@@ -270,4 +268,4 @@ int main(int argc, char *argv[])
     /* quitting */
     return EXIT_SUCCESS;
 }
-
+        
