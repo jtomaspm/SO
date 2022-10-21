@@ -86,6 +86,7 @@ void thread_key_create(pthread_key_t *key, void (*destr_function) (void *)) // o
 
 void * server_thread(void * arg) {
     uint32_t id = *(uint32_t *) arg;
+    printf("%02u",id);
     return NULL;
 }
 
@@ -231,6 +232,7 @@ int main(int argc, char *argv[])
     sos::open();
 
     /* launching the servers */
+    server_thread((uint32_t *) nservers);
 
     /* 
      * TODO point
